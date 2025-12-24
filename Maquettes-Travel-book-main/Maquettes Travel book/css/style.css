@@ -1,0 +1,296 @@
+/* CSS Variables */
+:root {
+    --font-main: 'Open Sans', Helvetica, sans-serif;
+    --font-title: 'Shadows Into Light', cursive;
+    --bg-light: #0F4C81;
+    --bg-dark: #042746;
+    --text-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+/* Body Styles */
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-dark);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(203, 14, 241);
+    transition: color 0.3s;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+}
+/* Header Styles */
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/backpack-mountain.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Logo Styles */
+nav .logo {
+    font-family: var(--font-title);
+    font-size: 2em;
+    z-index: 10;
+}
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 40%;
+}
+/* Navigation Links Hover Effect */
+.hero {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 5em;
+}
+
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.hero .button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+}
+
+.hero .button i {
+    margin-left: 10px;
+}
+/* About Section */
+.about {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+}
+
+.about h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.about .icons {
+    margin-top: 40px;
+}
+
+.about .icons i {
+    font-size: 3em;
+    margin: 0 20px;
+}
+
+.about .icons i:nth-child(1) {
+    color: #28a745;
+}
+
+.about .icons i:nth-child(2) {
+    color: #ffc107;
+}
+
+.about .icons i:nth-child(3) {
+    color: #17a2b8;
+}
+
+.destinations article {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 5%;
+}
+
+.destinations article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.destinations .article-content, .destinations .article-image {
+    flex: 1;
+}
+
+.destinations .article-content h3 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.destinations .article-content h3::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.destinations .article-content h3 i {
+    margin-right: 15px;
+}
+
+.destinations .article-content p {
+    line-height: 1.6;
+}
+
+.destinations img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--bg-light);
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.contact h4, .social h4 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+/* Contact Section */
+.social a {
+    margin: 0 15px;
+    font-size: 2em;
+}
+
+.copyright {
+    padding: 20px;
+}
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    bottom: 80px;
+    right: 30px;
+    font-size: 1.5em;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    border: 2px solid var(--text-color);
+}
+
+/* Mobile Responsive */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+/* Burger Menu */
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/* Media Queries */
+@media screen and (max-width: 768px) {/* Mobile Styles */
+    .nav-links {
+        position: absolute;/* Changement en position absolue */
+        right: 0px;/* Ajustement de la position horizontale */
+        top: 8vh;/* Ajustement de la position verticale */
+        background-color: var(--bg-light);/* Changement de couleur de fond */
+        display: flex;
+        flex-direction: column;/* Changement en colonne */
+        align-items: center;/* Centrer les éléments */
+        width: 40%; /* Largeur réduite pour les écrans mobiles */
+        height: auto; /* Hauteur automatique pour s'adapter au contenu */
+        transform: translateX(100%);/* Initialement hors de l'écran */
+        transition: transform 0.5s ease-in;/* Animation de transition */
+        z-index: 9;/* Assurer que le menu est au-dessus des autres éléments */
+        text-shadow: #81790f; /* Ajout d'une ombre au texte pour une meilleure lisibilité */
+    }
+
+    .nav-links li {
+        opacity: 0;
+        padding: 15px 0; /* Ajout d'un peu d'espace vertical */
+    }
+
+    .burger {
+        display: block;
+        z-index: 10;
+    }
+/* Ajustements pour la section des destinations */
+    .destinations article,
+    .destinations article:nth-child(even) {
+        flex-direction: column;
+    }
+}
+/* Activation du menu de navigation */
+.nav-active {
+    transform: translateX(0%);
+}
+/* Animation des liens de navigation */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+/* Burger Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
